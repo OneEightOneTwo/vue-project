@@ -44,20 +44,20 @@ export default {
       temporaryData: {
         prefixes: detectPrefixes(),
         offsetY: "",
-        poswidth: 0,
-        posheight: 0,
-        lastPosWidth: "",
-        lastPosHeight: "",
+        poswidth: 0,// 记录位移
+        posheight: 0,// 记录位移
+        lastPosWidth: "",// 记录上次最终位移
+        lastPosHeight: "",// 记录上次最终位移
         lastZindex: "",
         rotate: 0,
         lastRotate: 0,
         visible: this.stackinit.visible || 3,
-        tracking: false,
-        animation: false,
+        tracking: false,// 是否在滑动，防止多次操作，影响体验
+        animation: false,// 首图是否启用动画效果，默认为否
         currentPage: this.stackinit.currentPage || 0,
-        opacity: 1,
+        opacity: 1, // 记录首图透明度
         lastOpacity: 0,
-        swipe: false,
+        swipe: false,// onTransition判定条件
         zIndex: 10
       }
     };

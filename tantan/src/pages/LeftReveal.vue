@@ -4,12 +4,12 @@
     <div style="background:#2f2e2c; height:100%;position:relative;z-index: 1003;">
       <!-- 头像 头部 -->
       <div class="head">
-        <div class="headportrait">
-          <img class="images" src="../assets/logo.png" alt>
+        <div class="headportrait" @click="redact">
+          <img class="images" src="../assets/kksk.gif" alt>
         </div>
       </div>
       <p class="nickname">
-        <strong>Onexiu</strong>
+        <strong>awsl</strong>
       </p>
       <p class="redact">点击查看/编辑</p>
       <!-- 选项 导航 -->
@@ -82,6 +82,9 @@ export default {
     },
     hideleft(){
       this.state.isleftshow = false;
+    },
+    redact(){
+       this.$router.push({ name: "compile"});
     }
   },
   computed: {

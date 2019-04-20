@@ -10,6 +10,7 @@ import RightXuanxian from './components/Right_reveal/RightXuanxian.vue'
 import Login from './pages/Left_com/Login.vue'
 import Registered from './pages/Left_com/Registered.vue'
 import Captcha from './pages/Left_com/Captcha.vue'
+import Compile from './pages/Left_com/Compile.vue'
 //所有匹配
 import Pairing from './pages/RIght_com/Pairing.vue'
 //聊天
@@ -36,6 +37,7 @@ const routes = [
     {path: '/login',name: 'login',component: Login},
     {path: '/registered',name: 'registered',component: Registered},
     {path: '/captcha',name: 'captcha',component: Captcha},
+    {path: '/compile',name: 'compile',component: Compile},
   ]
 
 //实例化路由

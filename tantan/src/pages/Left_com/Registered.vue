@@ -1,34 +1,53 @@
 <template>
-    <div style="background:#f6f5f1;height:667px;">
-        <div class="message">
-            <p>请输入正确的手机号码，并点击继续</p>
-        </div>
-        <!-- 表单输入框 -->
-        <div>
-            <div class="inputBox">
-                <div class="leftinput">86</div>
-                <div class="rightinput"><input type="text" placeholder="手机号码"> </div>
-            </div>
-        </div>
-
-        <div class="continue">
-            <h6 @click="captcha" class="continueText">继续</h6>
-
-        </div>
-
-
+  <div style="background:#f6f5f1;height:667px;">
+    <div class="message">
+      <p>请输入正确的手机号码，并点击继续</p>
     </div>
+    <!-- 表单输入框 -->
+    <div>
+      <div class="inputBox">
+        <div class="leftinput">86</div>
+        <div class="rightinput">
+          <input type="text" placeholder="手机号码">
+        </div>
+      </div>
+    </div>
+
+    <div class="continue">
+      <h6 @click="captcha" class="continueText">继续</h6>
+    </div>
+  </div>
 </template>
 <script>
+import qs from "qs";
 export default {
-    methods: {
-        captcha(){
-            this.$router.push({name:'captcha',id:'1'});
+  methods: {
+    captcha() {
+      this.$axios
+        .post(
+          "/usr/api/submit_vcode",
+          qs.stringify({
+            phone: 13809759821,
+            vcode:1660
+          })
+        )
+        .then(res => {
+          // if (res.data.code == 200) {
+          // console.log(res);
+          // }
+        });
 
-        }
-    },
+      // let { data } = this.$axios.post(
+      //   "",
+      //   {
+      //     phone: 13360575656
+      //   }
+      // );
 
-}
+      // this.$router.push({ name: "captcha", id: 1 });
+    }
+  }
+};
 </script>
 <style scoped>
 .message {
@@ -75,9 +94,9 @@ export default {
   border-radius: 10px;
   line-height: 50px;
 }
-.continue .continueText{
-    text-align: center;
-    color: #fff;
-    font-size: 14px;
+.continue .continueText {
+  text-align: center;
+  color: #fff;
+  font-size: 14px;
 }
 </style>
